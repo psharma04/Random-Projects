@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Train: Data and APIs Project 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest"></script>
+<link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
+
+  </head>
+  <body>
+    <div class="container">
+    <h1>pH Levels of Different Acids and Bases</h1>
+    <canvas id="myChart" width="250" height="100"></canvas>
+    <script>
+      // Data from: https://data.giss.nasa.gov/gistemp/
+      // Mean from: https://earthobservatory.nasa.gov/world-of-change/DecadalTemp
+
+      window.addEventListener('load', setup);
+      Chart.defaults.global.defaultFontColor = 'white';
+      async function setup() {
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const dataset = await getData();
+        const myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: dataset.time,
+            datasets: [
+              {
+                label: 'Nitric Acid',
+                data: dataset.nitric,
+                fill: true,
+                borderColor: 'rgba(0, 0, 255, 1)',
+                backgroundColor: 'rgba(0, 0, 255, 0.5)',
+                borderWidth: 1
+              },
+              {
+                label: 'Citric Acid',
+                data: dataset.citric,
+                fill: true,
+                borderColor: 'rgba(235, 155, 52, 1)',
+                backgroundColor: 'rgba(235, 155, 52, 0.5)',
+                borderWidth: 1
+              },
+              {
+                label: 'Hydrochloric Acid',
+                data: dataset.hcl,
+                fill: true,
+                borderColor: 'rgba(52, 204, 235, 1)',
+                backgroundColor: 'rgba(52, 204, 235, 0.5)',
+                borderWidth: 1
+              },
+              {
+                label: 'Acetic (Ethanoic) Acid',
+                data: dataset.acetic,
+                fill: true,
+                borderColor: 'rgba(52, 235, 174, 1)',
+                backgroundColor: 'rgba(52, 235, 174, 0.5)',
+                borderWidth: 1
+              },
+              {
+                label: 'Ionized Water',
+                data: dataset.ionized,
+                fill: true,
+                borderColor: 'rgba(198, 52, 235, 1)',
+                backgroundColor: 'rgba(198, 52, 235, 0.5)',
+                borderWidth: 1
+              },
+              {
+                label: 'Tap Water',
+                data: dataset.tapWater,
+                fill: true,
+                borderColor: 'rgba(235, 52, 155, 1)',
+                backgroundColor: 'rgba(235, 52, 155, 0.5)',
+                borderWidth: 1
+              },
+              {
+                label: 'Ammonia',
+                data: dataset.ammonia,
+                fill: true,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderWidth: 1
+              },
+              {
+                label: 'Sodium Hydroxide',
+                data: dataset.sodiumHydroxide,
+                fill: true,
+                borderColor: 'rgba(155, 235, 52, 1)',
+                backgroundColor: 'rgba(155, 235, 52, 0.5)',
+                borderWidth: 1
+              }
+            ]
+          },
+          options: {
+    scales: {
+        xAxes: [{
+          scaleLabel: {
+              display: true,
+              labelString: 'Time (s)',
+              fontSize: 20,
+            },
+        gridLines: {
+          color: "#CCC"
+        },
+      }],
+        yAxes: [{
+            scaleLabel: {
+                display: true,
+                labelString: 'pH Level',
+                fontSize: 20,
+              },
+            ticks: {
+                beginAtZero: true
+              },
+            gridLines: {
+              color: "#CCC"
+            },
+        }]
+      }
+    }
+        });
+      }
+
+      async function getData() {
+        // const response = await fetch('testdata.csv');
+        const response = await fetch('EXPORT_DATA.CSV');
+        const data = await response.text();
+        const time = [];
+        const tapWater = [];
+        const nitric = [];
+        const citric = [];
+        const hcl = [];
+        const acetic = [];
+        const ionized = [];
+        const ammonia = [];
+        const sodiumHydroxide = [];
+        const rows = data.split('\n').slice(1);
+        rows.forEach(row => {
+          const cols = row.split(',');
+          time.push(cols[0]);
+          tapWater.push(parseFloat(cols[6]));
+          nitric.push(parseFloat(cols[1]));
+          citric.push(parseFloat(cols[2]));
+          hcl.push(parseFloat(cols[3]));
+          acetic.push(parseFloat(cols[4]));
+          ionized.push(parseFloat(cols[5]));
+          ammonia.push(parseFloat(cols[7]));
+          sodiumHydroxide.push(parseFloat(cols[8]));
+
+        });
+        return { time, nitric, citric, hcl, acetic, ionized, tapWater, ammonia, sodiumHydroxide };
+      }
+    </script>
+  </div>
+  <br></br>
+  <div class='container'>
+    <footer>
+  <p align="center">Chart by Pranav Sharma using <a href="https://chartjs.org">Chart.JS</p>
+  <p align="center"><a href="mailto:rbxii3@yuno.host">rbxii3@yuno.host</a></p>
+</footer>
+</div>
+</body>
+</html>
