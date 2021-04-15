@@ -20,3 +20,12 @@ While the Amyloid Cascade Hypothesis has strong backing from large portions of t
 ### Research Question
 
 As discussed in the literature review, most aspects of the Amyloid Cascade Hypothesis and the impact of APP have either been exhausted as avenues of research, or are under investigation by government-backed laboratories. As a consequence, this paper is focused on identifying alternative genes which affect and/or contribute to Alzheimer's onset, as well as the manner in which these genes affect the onset of AD.
+
+
+### Citations for this section:
+Alzheimer’s Association (2016) ‘2016 Alzheimer’s disease facts and figures’, Alzheimer’s & Dementia, 12(4), pp. 459–509. doi: [10.1016/j.jalz.2016.03.001](https://doi.org/10.1016/j.jalz.2016.03.001).
+Gauthier, S. et al. (2016) ‘Why has therapy development for dementia failed in the last two decades?’, Alzheimer’s & Dementia, 12(1), pp. 60–64. doi: [10.1016/j.jalz.2015.12.003](https://doi.org/10.1016/j.jalz.2015.12.003).
+Handen, B. L. (2020) ‘The Search for Biomarkers of Alzheimer’s Disease in Down Syndrome’, American Journal on Intellectual and Developmental Disabilities, 125(2), pp. 97–99. doi: [10.1352/1944-7558-125.2.97](https://doi.org/10.1352/1944-7558-125.2.97).
+Institute for Health Metrics and Evaluation (2021) Global Health Data Exchange Visualisation Hub. University of Washington. Available at: https://perma.cc/HRM3-62N9.
+Jiang, T., Sun, Q. and Chen, S. (2016) ‘Oxidative stress: A major pathogenesis and potential therapeutic target of antioxidative agents in Parkinson’s disease and Alzheimer’s disease’, Progress in Neurobiology, 147, pp. 1–19. doi: [10.1016/j.pneurobio.2016.07.005](https://doi.org/10.1016/j.pneurobio.2016.07.005).
+Tanzi, R. E. and Bertram, L. (2005) ‘Twenty Years of the Alzheimer’s Disease Amyloid Hypothesis: A Genetic Perspective’, Cell, 120(4), pp. 545–555. doi: [10.1016/j.cell.2005.02.008](https://doi.org/10.1016/j.cell.2005.02.008).
